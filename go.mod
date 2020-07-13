@@ -1,1 +1,1 @@
-module github.com/c
+module github.com/caarlos0/sshmarsh
