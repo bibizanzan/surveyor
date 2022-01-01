@@ -1,2 +1,2 @@
 // Copyright 2014 The Go Authors. All rights reserved.
-// Use of thi
+// Use of this source code is g
