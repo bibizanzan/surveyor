@@ -2,4 +2,4 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// Package bcrypt_pbkdf implements bcrypt_pbkdf(
+// Package bcrypt_pbkdf implements bcrypt_pbkdf(3) from Op
