@@ -4,4 +4,5 @@
 
 // Package bcrypt_pbkdf implements bcrypt_pbkdf(3) from OpenBSD.
 //
-// See https://flak.tedunangst.com/post/bcrypt-
+// See https://flak.tedunangst.com/post/bcrypt-pbkdf and
+//
