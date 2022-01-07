@@ -5,4 +5,4 @@
 // Package bcrypt_pbkdf implements bcrypt_pbkdf(3) from OpenBSD.
 //
 // See https://flak.tedunangst.com/post/bcrypt-pbkdf and
-// https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/lib/libutil
+// https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/lib/libutil/bcrypt_
