@@ -6,4 +6,6 @@
 //
 // See https://flak.tedunangst.com/post/bcrypt-pbkdf and
 // https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/lib/libutil/bcrypt_pbkdf.c.
-package bcrypt_pb
+package bcrypt_pbkdf
+
+import (
