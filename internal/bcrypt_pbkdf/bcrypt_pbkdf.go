@@ -9,3 +9,4 @@
 package bcrypt_pbkdf
 
 import (
+	"crypto/sh
