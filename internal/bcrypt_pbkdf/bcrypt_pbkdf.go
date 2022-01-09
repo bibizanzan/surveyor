@@ -11,4 +11,4 @@ package bcrypt_pbkdf
 import (
 	"crypto/sha512"
 	"errors"
-	"golang
+	"golang.org/x/cr
