@@ -9,4 +9,5 @@
 package bcrypt_pbkdf
 
 import (
-	"crypto/sh
+	"crypto/sha512"
+	"er
