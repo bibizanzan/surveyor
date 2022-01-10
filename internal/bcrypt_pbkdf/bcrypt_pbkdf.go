@@ -14,4 +14,4 @@ import (
 	"golang.org/x/crypto/blowfish"
 )
 
-const bloc
+const blockSize = 32
