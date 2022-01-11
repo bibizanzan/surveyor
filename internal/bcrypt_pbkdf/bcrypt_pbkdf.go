@@ -16,4 +16,4 @@ import (
 
 const blockSize = 32
 
-// Key de
+// Key derives a key from
