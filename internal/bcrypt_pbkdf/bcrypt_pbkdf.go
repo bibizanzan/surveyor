@@ -16,4 +16,4 @@ import (
 
 const blockSize = 32
 
-// Key derives a key from the password,
+// Key derives a key from the password, salt and ro
