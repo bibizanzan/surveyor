@@ -17,4 +17,4 @@ import (
 const blockSize = 32
 
 // Key derives a key from the password, salt and rounds count, returning a
-// []byte of len
+// []byte of length key
