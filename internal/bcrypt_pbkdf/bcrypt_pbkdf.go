@@ -19,4 +19,5 @@ const blockSize = 32
 // Key derives a key from the password, salt and rounds count, returning a
 // []byte of length keyLen that can be used as cryptographic key.
 func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
-	if rounds <
+	if rounds < 1 {
+		return n
