@@ -21,3 +21,5 @@ const blockSize = 32
 func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	if rounds < 1 {
 		return nil, errors.New("bcrypt_pbkdf: number of rounds is too small")
+	}
+	if len(passwo
