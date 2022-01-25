@@ -23,4 +23,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		return nil, errors.New("bcrypt_pbkdf: number of rounds is too small")
 	}
 	if len(password) == 0 {
-		return nil, errors.New("bcrypt_pbkdf: empty pas
+		return nil, errors.New("bcrypt_pbkdf: empty password")
+	}
