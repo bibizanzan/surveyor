@@ -25,3 +25,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	if len(password) == 0 {
 		return nil, errors.New("bcrypt_pbkdf: empty password")
 	}
+	if len(salt) 
