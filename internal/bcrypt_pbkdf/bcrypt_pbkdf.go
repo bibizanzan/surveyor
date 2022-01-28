@@ -29,4 +29,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		return nil, errors.New("bcrypt_pbkdf: bad salt length")
 	}
 	if keyLen > 1024 {
-		return nil, errors.New("bcr
+		return nil, errors.New("bcrypt_pbkdf: keyL
