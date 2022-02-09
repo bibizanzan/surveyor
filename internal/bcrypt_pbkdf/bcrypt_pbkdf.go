@@ -32,4 +32,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		return nil, errors.New("bcrypt_pbkdf: keyLen is too large")
 	}
 
-	numBlocks := (keyLen + blockSize - 1)
+	numBlocks := (keyLen + blockSize - 1) / blockSize
+	key
