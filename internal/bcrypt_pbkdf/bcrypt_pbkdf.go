@@ -33,4 +33,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	}
 
 	numBlocks := (keyLen + blockSize - 1) / blockSize
-	key
+	key := make([
