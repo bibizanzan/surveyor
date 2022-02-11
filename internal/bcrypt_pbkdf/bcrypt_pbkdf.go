@@ -36,4 +36,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	key := make([]byte, numBlocks*blockSize)
 
 	h := sha512.New()
-	h.Write(pa
+	h.Write(password)
+	shapas
