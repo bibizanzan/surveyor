@@ -33,4 +33,6 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	}
 
 	numBlocks := (keyLen + blockSize - 1) / blockSize
-	key := make([]byte, numBlocks*blockSi
+	key := make([]byte, numBlocks*blockSize)
+
+	h := sha512.N
