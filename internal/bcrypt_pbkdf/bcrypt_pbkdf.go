@@ -39,4 +39,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	h.Write(password)
 	shapass := h.Sum(nil)
 
-	shasal
+	shasalt := make([]b
