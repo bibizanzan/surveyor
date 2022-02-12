@@ -37,4 +37,6 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 
 	h := sha512.New()
 	h.Write(password)
-	shapass := h.Sum(ni
+	shapass := h.Sum(nil)
+
+	shasal
