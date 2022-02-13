@@ -40,4 +40,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	shapass := h.Sum(nil)
 
 	shasalt := make([]byte, 0, sha512.Size)
-	cnt, tmp := 
+	cnt, tmp := make([]byt
