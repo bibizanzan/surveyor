@@ -41,4 +41,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 
 	shasalt := make([]byte, 0, sha512.Size)
 	cnt, tmp := make([]byte, 4), make([]byte, blockSize)
-	for block := 1; block <= numBlocks; block++ 
+	for block := 1; block <= numBlocks; block++ {
+		h.Reset
