@@ -44,4 +44,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	for block := 1; block <= numBlocks; block++ {
 		h.Reset()
 		h.Write(salt)
-		cnt[0] = byte(bl
+		cnt[0] = byte(block >> 24
