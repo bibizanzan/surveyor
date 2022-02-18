@@ -45,4 +45,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		h.Reset()
 		h.Write(salt)
 		cnt[0] = byte(block >> 24)
-		cnt[1] = byte
+		cnt[1] = byte(block >> 16
