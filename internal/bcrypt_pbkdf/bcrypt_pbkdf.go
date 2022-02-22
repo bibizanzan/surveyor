@@ -49,4 +49,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		cnt[2] = byte(block >> 8)
 		cnt[3] = byte(block)
 		h.Write(cnt)
-		bcryptHash(t
+		bcryptHash(tmp, shapass, h.S
