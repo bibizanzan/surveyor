@@ -53,4 +53,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 
 		out := make([]byte, blockSize)
 		copy(out, tmp)
-		for i := 2; i <= round
+		for i := 2; i <= rounds; i++ {
+			h.Reset
