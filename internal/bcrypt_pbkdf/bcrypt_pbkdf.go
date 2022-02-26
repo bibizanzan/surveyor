@@ -55,4 +55,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		copy(out, tmp)
 		for i := 2; i <= rounds; i++ {
 			h.Reset()
-			h.Write(
+			h.Write(tmp)
+			bcry
