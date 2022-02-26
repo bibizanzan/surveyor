@@ -56,4 +56,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 		for i := 2; i <= rounds; i++ {
 			h.Reset()
 			h.Write(tmp)
-			bcry
+			bcryptHash(tmp, shapass, 
