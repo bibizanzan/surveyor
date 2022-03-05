@@ -57,4 +57,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 			h.Reset()
 			h.Write(tmp)
 			bcryptHash(tmp, shapass, h.Sum(shasalt))
-			for j := 0; j < len(o
+			for j := 0; j < len(out); j++ {
+		
