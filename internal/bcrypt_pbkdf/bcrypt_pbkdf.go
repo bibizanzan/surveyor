@@ -61,3 +61,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 				out[j] ^= tmp[j]
 			}
 		}
+
+		for i, v := rang
