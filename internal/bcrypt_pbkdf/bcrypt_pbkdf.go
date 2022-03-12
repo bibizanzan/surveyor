@@ -64,3 +64,6 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 
 		for i, v := range out {
 			key[i*numBlocks+(block-1)] = v
+		}
+	}
+	return 
