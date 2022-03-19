@@ -69,4 +69,4 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 	return key[:keyLen], nil
 }
 
-var magic = []byte("OxychromaticBlowfish
+var magic = []byte("OxychromaticBlowfishSwatDynamite")
