@@ -71,4 +71,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 
 var magic = []byte("OxychromaticBlowfishSwatDynamite")
 
-func bcryptHash(out, shapass, shasalt []byte)
+func bcryptHash(out, shapass, shasalt []byte) {
+	c, err
