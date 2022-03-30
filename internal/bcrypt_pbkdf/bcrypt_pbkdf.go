@@ -72,4 +72,5 @@ func Key(password, salt []byte, rounds, keyLen int) ([]byte, error) {
 var magic = []byte("OxychromaticBlowfishSwatDynamite")
 
 func bcryptHash(out, shapass, shasalt []byte) {
-	c, err := blowfish.NewSaltedCipher(shap
+	c, err := blowfish.NewSaltedCipher(shapass, shasalt)
+	if
