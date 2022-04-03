@@ -73,4 +73,5 @@ var magic = []byte("OxychromaticBlowfishSwatDynamite")
 
 func bcryptHash(out, shapass, shasalt []byte) {
 	c, err := blowfish.NewSaltedCipher(shapass, shasalt)
-	if err != nil
+	if err != nil {
+		panic
