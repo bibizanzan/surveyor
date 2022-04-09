@@ -76,4 +76,4 @@ func bcryptHash(out, shapass, shasalt []byte) {
 	if err != nil {
 		panic(err)
 	}
-	for
+	for i := 0; i < 64; 
