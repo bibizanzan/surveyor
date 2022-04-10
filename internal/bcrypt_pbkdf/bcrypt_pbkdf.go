@@ -76,4 +76,5 @@ func bcryptHash(out, shapass, shasalt []byte) {
 	if err != nil {
 		panic(err)
 	}
-	for i := 0; i < 64; 
+	for i := 0; i < 64; i++ {
+		blowfis
