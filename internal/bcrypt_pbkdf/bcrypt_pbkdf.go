@@ -77,4 +77,5 @@ func bcryptHash(out, shapass, shasalt []byte) {
 		panic(err)
 	}
 	for i := 0; i < 64; i++ {
-		blowfish.ExpandKey(shasa
+		blowfish.ExpandKey(shasalt, c)
+		blowf
