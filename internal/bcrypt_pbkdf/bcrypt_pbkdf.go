@@ -86,4 +86,4 @@ func bcryptHash(out, shapass, shasalt []byte) {
 			c.Encrypt(out[i:i+8], out[i:i+8])
 		}
 	}
-	// Sw
+	// Swap bytes due 
