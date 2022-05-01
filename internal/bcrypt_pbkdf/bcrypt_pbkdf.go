@@ -83,4 +83,4 @@ func bcryptHash(out, shapass, shasalt []byte) {
 	copy(out, magic)
 	for i := 0; i < 32; i += 8 {
 		for j := 0; j < 64; j++ {
-			c.Encrypt(out[i:i
+			c.Encrypt(out[i:i+8], out[i:i
