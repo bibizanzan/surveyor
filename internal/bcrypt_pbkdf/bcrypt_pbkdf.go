@@ -86,4 +86,5 @@ func bcryptHash(out, shapass, shasalt []byte) {
 			c.Encrypt(out[i:i+8], out[i:i+8])
 		}
 	}
-	// Swap bytes due to different endian
+	// Swap bytes due to different endianness.
+	for i
