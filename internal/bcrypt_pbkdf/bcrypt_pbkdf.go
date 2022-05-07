@@ -87,4 +87,4 @@ func bcryptHash(out, shapass, shasalt []byte) {
 		}
 	}
 	// Swap bytes due to different endianness.
-	for i
+	for i := 0; i < 32;
