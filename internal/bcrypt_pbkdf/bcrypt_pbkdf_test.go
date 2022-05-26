@@ -1,1 +1,1 @@
-// Copyright 2014 The Go Author
+// Copyright 2014 The Go Authors. All rights r
