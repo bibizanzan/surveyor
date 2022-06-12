@@ -9,4 +9,4 @@ import (
 	"testing"
 )
 
-// Test vectors g
+// Test vectors generated b
