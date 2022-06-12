@@ -6,4 +6,7 @@ package bcrypt_pbkdf
 
 import (
 	"bytes"
-	"test
+	"testing"
+)
+
+/
