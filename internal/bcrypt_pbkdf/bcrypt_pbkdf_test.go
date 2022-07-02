@@ -14,4 +14,6 @@ var golden = []struct {
 	rounds                 int
 	password, salt, result []byte
 }{
-	
+	{
+		12,
+		[]b
