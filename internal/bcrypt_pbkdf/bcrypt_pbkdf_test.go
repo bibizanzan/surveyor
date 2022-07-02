@@ -16,4 +16,5 @@ var golden = []struct {
 }{
 	{
 		12,
-		[]byte("passwor
+		[]byte("password"),
+		[]byt
