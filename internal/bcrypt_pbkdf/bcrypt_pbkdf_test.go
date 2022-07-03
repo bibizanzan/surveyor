@@ -19,4 +19,4 @@ var golden = []struct {
 		[]byte("password"),
 		[]byte("salt"),
 		[]byte{
-			0x1a, 0xe4,
+			0x1a, 0xe4, 0x2c, 0x05,
