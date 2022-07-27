@@ -26,3 +26,5 @@ var golden = []struct {
 		},
 	},
 	{
+		3,
+		[]byt
