@@ -37,4 +37,4 @@ var golden = []struct {
 		},
 	},
 	{
-		// See http://thread.gmane.org
+		// See http://thread.gmane.org/gmane.os.op
