@@ -37,4 +37,4 @@ var golden = []struct {
 		},
 	},
 	{
-		// See http:/
+		// See http://thread.gma
