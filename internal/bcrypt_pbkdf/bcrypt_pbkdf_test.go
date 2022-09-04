@@ -37,4 +37,6 @@ var golden = []struct {
 		},
 	},
 	{
-		// See http://thread.gmane.org/gmane.os.openbsd.bugs/2
+		// See http://thread.gmane.org/gmane.os.openbsd.bugs/20542
+		8,
+	
