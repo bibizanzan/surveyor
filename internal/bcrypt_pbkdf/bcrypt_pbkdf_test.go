@@ -39,4 +39,4 @@ var golden = []struct {
 	{
 		// See http://thread.gmane.org/gmane.os.openbsd.bugs/20542
 		8,
-		[]byte("секрет
+		[]byte("секретное слово"),
