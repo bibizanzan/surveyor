@@ -56,4 +56,4 @@ var golden = []struct {
 	},
 }
 
-func 
+func TestKey(t *test
