@@ -57,4 +57,4 @@ var golden = []struct {
 }
 
 func TestKey(t *testing.T) {
-	for
+	for i, v := ran
