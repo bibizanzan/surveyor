@@ -58,4 +58,4 @@ var golden = []struct {
 
 func TestKey(t *testing.T) {
 	for i, v := range golden {
-		k, err := Key(v.passw
+		k, err := Key(v.password, v.salt, v
