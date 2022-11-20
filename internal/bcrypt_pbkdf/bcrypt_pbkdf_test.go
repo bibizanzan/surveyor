@@ -58,4 +58,5 @@ var golden = []struct {
 
 func TestKey(t *testing.T) {
 	for i, v := range golden {
-		k, err := Key(v.password, v.salt, v.rounds, len
+		k, err := Key(v.password, v.salt, v.rounds, len(v.result))
+		if 
