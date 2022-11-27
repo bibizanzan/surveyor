@@ -60,4 +60,5 @@ func TestKey(t *testing.T) {
 	for i, v := range golden {
 		k, err := Key(v.password, v.salt, v.rounds, len(v.result))
 		if err != nil {
-			t.Errorf("%d: %s", i,
+			t.Errorf("%d: %s", i, err)
+			continue
