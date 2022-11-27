@@ -62,3 +62,5 @@ func TestKey(t *testing.T) {
 		if err != nil {
 			t.Errorf("%d: %s", i, err)
 			continue
+		}
+		if !bytes
