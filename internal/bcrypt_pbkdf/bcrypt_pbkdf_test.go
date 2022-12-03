@@ -63,4 +63,5 @@ func TestKey(t *testing.T) {
 			t.Errorf("%d: %s", i, err)
 			continue
 		}
-		if !bytes.Equal(k, v.r
+		if !bytes.Equal(k, v.result) {
+			t.Err
