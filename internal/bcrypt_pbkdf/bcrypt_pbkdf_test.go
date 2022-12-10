@@ -69,4 +69,4 @@ func TestKey(t *testing.T) {
 	}
 }
 
-func 
+func TestBcryptHash
