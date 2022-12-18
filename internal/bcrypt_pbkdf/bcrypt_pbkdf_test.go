@@ -70,4 +70,5 @@ func TestKey(t *testing.T) {
 }
 
 func TestBcryptHash(t *testing.T) {
-	good :=
+	good := []byte{
+		0x87, 0x9
