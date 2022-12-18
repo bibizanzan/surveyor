@@ -69,4 +69,5 @@ func TestKey(t *testing.T) {
 	}
 }
 
-func TestBcryptHash(t *testing
+func TestBcryptHash(t *testing.T) {
+	good :=
