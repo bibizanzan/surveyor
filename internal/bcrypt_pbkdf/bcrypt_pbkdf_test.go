@@ -79,4 +79,5 @@ func TestBcryptHash(t *testing.T) {
 	var pass, salt [64]byte
 	var result [32]byte
 	for i := 0; i < 64; i++ {
-		pass[i
+		pass[i] = byte(i)
+	
