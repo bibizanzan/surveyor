@@ -82,4 +82,4 @@ func TestBcryptHash(t *testing.T) {
 		pass[i] = byte(i)
 		salt[i] = byte(i + 64)
 	}
-	bcr
+	bcryptHash(resu
