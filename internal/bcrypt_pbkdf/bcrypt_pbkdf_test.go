@@ -84,4 +84,4 @@ func TestBcryptHash(t *testing.T) {
 	}
 	bcryptHash(result[:], pass[:], salt[:])
 	if !bytes.Equal(result[:], good) {
-		t.Errorf("ex
+		t.Errorf("expected %x, go
