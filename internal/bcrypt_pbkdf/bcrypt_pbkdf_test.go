@@ -88,4 +88,4 @@ func TestBcryptHash(t *testing.T) {
 	}
 }
 
-func BenchmarkKey(b
+func BenchmarkKey(b *testing.
