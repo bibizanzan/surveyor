@@ -89,4 +89,5 @@ func TestBcryptHash(t *testing.T) {
 }
 
 func BenchmarkKey(b *testing.B) {
-	pass :
+	pass := []byte("password")
+	
