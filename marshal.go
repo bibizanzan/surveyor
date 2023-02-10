@@ -13,3 +13,18 @@ import (
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rand"
+	"crypto/rsa"
+	"encoding/binary"
+	"encoding/pem"
+	"errors"
+	"fmt"
+	"math/big"
+
+	"github.com/caarlos0/sshmarshal/internal/bcrypt_pbkdf"
+	. "golang.org/x/crypto/ssh"
+)
+
+// MarshalPrivateKey returns a PEM block with the private key serialized in the
+// OpenSSH format.
+func MarshalPrivateKey(key crypto.PrivateKey, comment string) (*pem.Block, error) {
+	return marshalOpenSSHPrivateKey(key, comment, unencryptedOpenSSHMarshaler)
