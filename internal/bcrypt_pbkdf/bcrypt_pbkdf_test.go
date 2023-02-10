@@ -92,4 +92,6 @@ func BenchmarkKey(b *testing.B) {
 	pass := []byte("password")
 	salt := []byte("salt")
 	for i := 0; i < b.N; i++ {
-		Key(pass, salt, 10, 32
+		Key(pass, salt, 10, 32)
+	}
+}
