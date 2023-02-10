@@ -28,3 +28,12 @@ import (
 // OpenSSH format.
 func MarshalPrivateKey(key crypto.PrivateKey, comment string) (*pem.Block, error) {
 	return marshalOpenSSHPrivateKey(key, comment, unencryptedOpenSSHMarshaler)
+}
+
+// MarshalPrivateKeyWithPassphrase returns a PEM block holding the encrypted
+// private key serialized in the OpenSSH format.
+func MarshalPrivateKeyWithPassphrase(key crypto.PrivateKey, comment string, passphrase []byte) (*pem.Block, error) {
+	return marshalOpenSSHPrivateKey(key, comment, passphraseProtectedOpenSSHMarshaler(passphrase))
+}
+
+func unencryptedOpenSSHMarshaler(privKeyBlock []byte) ([]byte, string, string, string, error) {
