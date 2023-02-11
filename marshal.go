@@ -44,3 +44,11 @@ func unencryptedOpenSSHMarshaler(privKeyBlock []byte) ([]byte, string, string, s
 func passphraseProtectedOpenSSHMarshaler(passphrase []byte) openSSHEncryptFunc {
 	return func(privKeyBlock []byte) ([]byte, string, string, string, error) {
 		salt := make([]byte, 16)
+		if _, err := rand.Read(salt); err != nil {
+			return nil, "", "", "", err
+		}
+
+		opts := struct {
+			Salt   []byte
+			Rounds uint32
+		}{salt, 16}
