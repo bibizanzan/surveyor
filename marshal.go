@@ -37,3 +37,10 @@ func MarshalPrivateKeyWithPassphrase(key crypto.PrivateKey, comment string, pass
 }
 
 func unencryptedOpenSSHMarshaler(privKeyBlock []byte) ([]byte, string, string, string, error) {
+	key := generateOpenSSHPadding(privKeyBlock, 8)
+	return key, "none", "none", "", nil
+}
+
+func passphraseProtectedOpenSSHMarshaler(passphrase []byte) openSSHEncryptFunc {
+	return func(privKeyBlock []byte) ([]byte, string, string, string, error) {
+		salt := make([]byte, 16)
