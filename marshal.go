@@ -52,3 +52,18 @@ func passphraseProtectedOpenSSHMarshaler(passphrase []byte) openSSHEncryptFunc {
 			Salt   []byte
 			Rounds uint32
 		}{salt, 16}
+
+		// Derive key to encrypt the private key block.
+		k, err := bcrypt_pbkdf.Key(passphrase, salt, int(opts.Rounds), 32+aes.BlockSize)
+		if err != nil {
+			return nil, "", "", "", err
+		}
+
+		// Add padding matching the block size of AES.
+		keyBlock := generateOpenSSHPadding(privKeyBlock, aes.BlockSize)
+
+		// Encrypt the private key using the derived secret.
+
+		dst := make([]byte, len(keyBlock))
+		key, iv := k[:32], k[32:]
+		block, err := aes.NewCipher(key)
