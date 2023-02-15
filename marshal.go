@@ -83,3 +83,9 @@ const privateKeyAuthMagic = "openssh-key-v1\x00"
 type openSSHEncryptFunc func(privKeyBlock []byte) (protectedKeyBlock []byte, cipherName, kdfName, kdfOptions string, err error)
 
 type openSSHEncryptedPrivateKey struct {
+	CipherName   string
+	KdfName      string
+	KdfOpts      string
+	NumKeys      uint32
+	PubKey       []byte
+	PrivKeyBlock []byte
