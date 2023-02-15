@@ -67,3 +67,19 @@ func passphraseProtectedOpenSSHMarshaler(passphrase []byte) openSSHEncryptFunc {
 		dst := make([]byte, len(keyBlock))
 		key, iv := k[:32], k[32:]
 		block, err := aes.NewCipher(key)
+		if err != nil {
+			return nil, "", "", "", err
+		}
+
+		stream := cipher.NewCTR(block, iv)
+		stream.XORKeyStream(dst, keyBlock)
+
+		return dst, "aes256-ctr", "bcrypt", string(Marshal(opts)), nil
+	}
+}
+
+const privateKeyAuthMagic = "openssh-key-v1\x00"
+
+type openSSHEncryptFunc func(privKeyBlock []byte) (protectedKeyBlock []byte, cipherName, kdfName, kdfOptions string, err error)
+
+type openSSHEncryptedPrivateKey struct {
