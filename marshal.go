@@ -102,3 +102,15 @@ type openSSHRSAPrivateKey struct {
 	N       *big.Int
 	E       *big.Int
 	D       *big.Int
+	Iqmp    *big.Int
+	P       *big.Int
+	Q       *big.Int
+	Comment string
+	Pad     []byte `ssh:"rest"`
+}
+
+type openSSHEd25519PrivateKey struct {
+	Pub     []byte
+	Priv    []byte
+	Comment string
+	Pad     []byte `ssh:"rest"`
