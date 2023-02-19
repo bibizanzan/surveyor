@@ -168,3 +168,10 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 			Q:       k.Primes[1],
 			Comment: comment,
 		}
+		pk1.Keytype = KeyAlgoRSA
+		pk1.Rest = Marshal(key)
+	case ed25519.PrivateKey:
+		pub := make([]byte, ed25519.PublicKeySize)
+		priv := make([]byte, ed25519.PrivateKeySize)
+		copy(pub, k[32:])
+		copy(priv, k)
