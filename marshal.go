@@ -139,3 +139,14 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 	w.NumKeys = 1
 
 	// Use a []byte directly on ed25519 keys.
+	if k, ok := key.(*ed25519.PrivateKey); ok {
+		key = *k
+	}
+
+	switch k := key.(type) {
+	case *rsa.PrivateKey:
+		E := new(big.Int).SetInt64(int64(k.PublicKey.E))
+		// Marshal public key:
+		// E and N are in reversed order in the public and private key.
+		pubKey := struct {
+			KeyType string
