@@ -175,3 +175,12 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 		priv := make([]byte, ed25519.PrivateKeySize)
 		copy(pub, k[32:])
 		copy(priv, k)
+
+		// Marshal public key.
+		pubKey := struct {
+			KeyType string
+			Pub     []byte
+		}{
+			KeyAlgoED25519, pub,
+		}
+		w.PubKey = Marshal(pubKey)
