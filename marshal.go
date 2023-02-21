@@ -184,3 +184,16 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 			KeyAlgoED25519, pub,
 		}
 		w.PubKey = Marshal(pubKey)
+
+		// Marshal private key.
+		key := openSSHEd25519PrivateKey{
+			Pub:     pub,
+			Priv:    priv,
+			Comment: comment,
+		}
+		pk1.Keytype = KeyAlgoED25519
+		pk1.Rest = Marshal(key)
+	case *ecdsa.PrivateKey:
+		var curve, keyType string
+		switch name := k.Curve.Params().Name; name {
+		case "P-256":
