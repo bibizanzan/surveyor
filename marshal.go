@@ -197,3 +197,24 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 		var curve, keyType string
 		switch name := k.Curve.Params().Name; name {
 		case "P-256":
+			curve = "nistp256"
+			keyType = KeyAlgoECDSA256
+		case "P-384":
+			curve = "nistp384"
+			keyType = KeyAlgoECDSA384
+		case "P-521":
+			curve = "nistp521"
+			keyType = KeyAlgoECDSA521
+		default:
+			return nil, errors.New("ssh: unhandled elliptic curve " + name)
+		}
+
+		pub := elliptic.Marshal(k.Curve, k.PublicKey.X, k.PublicKey.Y)
+
+		// Marshal public key.
+		pubKey := struct {
+			KeyType string
+			Curve   string
+			Pub     []byte
+		}{
+			keyType, curve, pub,
