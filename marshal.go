@@ -218,3 +218,11 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 			Pub     []byte
 		}{
 			keyType, curve, pub,
+		}
+		w.PubKey = Marshal(pubKey)
+
+		// Marshal private key.
+		key := openSSHECDSAPrivateKey{
+			Curve:   curve,
+			Pub:     pub,
+			D:       k.D,
