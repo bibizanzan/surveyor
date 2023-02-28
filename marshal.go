@@ -247,3 +247,11 @@ func marshalOpenSSHPrivateKey(key crypto.PrivateKey, comment string, encrypt ope
 		Bytes: append([]byte(privateKeyAuthMagic), b...),
 	}
 	return block, nil
+}
+
+func generateOpenSSHPadding(block []byte, blockSize int) []byte {
+	for i, l := 0, len(block); (l+i)%blockSize != 0; i++ {
+		block = append(block, byte(i+1))
+	}
+	return block
+}
