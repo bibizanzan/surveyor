@@ -14,3 +14,25 @@ import (
 	"github.com/caarlos0/sshmarshal/testdata"
 	. "golang.org/x/crypto/ssh"
 )
+
+var testPrivateKeys map[string]interface{}
+
+func init() {
+	n := len(testdata.PEMBytes)
+	testPrivateKeys = make(map[string]interface{}, n)
+
+	for t, k := range testdata.PEMBytes {
+		var err error
+		testPrivateKeys[t], err = ParseRawPrivateKey(k)
+		if err != nil {
+			panic(fmt.Sprintf("Unable to parse test key %s: %v", t, err))
+		}
+	}
+}
+
+func TestMarshalPrivateKey(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		{"rsa-openssh-format"},
+		{"ed25519"},
