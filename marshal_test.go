@@ -56,3 +56,15 @@ func TestMarshalPrivateKey(t *testing.T) {
 			if err != nil {
 				t.Fatalf("cannot parse %s: %v", tt.name, err)
 			}
+
+			if !reflect.DeepEqual(expected, key) {
+				t.Errorf("unexpected marshaled key %s", tt.name)
+			}
+		})
+	}
+}
+
+func TestMarshalPrivateKeyWithPassphrase(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
