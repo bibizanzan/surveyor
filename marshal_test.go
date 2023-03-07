@@ -87,3 +87,13 @@ func TestMarshalPrivateKeyWithPassphrase(t *testing.T) {
 			}
 
 			key, err := ParseRawPrivateKeyWithPassphrase(pem.EncodeToMemory(block), []byte("test-passphrase"))
+			if err != nil {
+				t.Fatalf("cannot parse %s: %v", tt.name, err)
+			}
+
+			if !reflect.DeepEqual(expected, key) {
+				t.Errorf("unexpected marshaled key %s", tt.name)
+			}
+		})
+	}
+}
